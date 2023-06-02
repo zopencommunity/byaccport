@@ -1,0 +1,36 @@
+export ZOPEN_TARBALL_URL="https://invisible-mirror.net/archives/byacc/byacc-20230521.tgz"
+export ZOPEN_TARBALL_DEPS="make zoslib coreutils diffutils sed grep"
+export ZOPEN_TYPE="TARBALL"
+export ZOPEN_COMP=CLANG
+#export ZOPEN_EXTRA_CFLAGS="-O0"
+export ZOPEN_CHECK_OPTS="-i check"
+
+zopen_check_results()
+{
+  dir="$1"
+  pfx="$2"
+  chk="$1/$2_check.log"
+
+  # Echo the following information to gauge build health
+  failures=$(grep "\.\.\.diff" $chk | wc -l | tr -d ' ')
+  success=$(grep "\.\.\.ok" $chk | wc -l | tr -d ' ')
+  totaltests=$((failures+success))
+  echo "actualFailures:$failures"
+  echo "totalTests:$totaltests"
+  echo "expectedFailures:187"
+}
+
+zopen_append_to_env()
+{
+  # echo envars outside of PATH, MANPATH, LIBPATH
+}
+
+zopen_append_to_setup()
+{
+  # echo commands that will run when installing via setup.sh
+}
+
+zopen_get_version()
+{
+  ./yacc --version | cut -f3 -d' '
+}
