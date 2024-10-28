@@ -2,6 +2,7 @@
 BYACC_VERSION="20240109"
 export ZOPEN_STABLE_URL="https://invisible-mirror.net/archives/byacc/byacc-${BYACC_VERSION}.tgz"
 export ZOPEN_STABLE_DEPS="make zoslib coreutils diffutils sed grep"
+export ZOPEN_CATEGORIES="development"
 export ZOPEN_BUILD_LINE="STABLE"
 export ZOPEN_COMP=CLANG
 #export ZOPEN_EXTRA_CFLAGS="-O0"
