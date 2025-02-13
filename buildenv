@@ -1,5 +1,5 @@
 # bump: byacc-version /BYACC_VERSION="(.*)"/ https://invisible-mirror.net/archives/byacc/|re:/href="byacc-([\d.]+).tgz"/$1/|semver:*
-BYACC_VERSION="20240109"
+BYACC_VERSION="20241231"
 export ZOPEN_STABLE_URL="https://invisible-mirror.net/archives/byacc/byacc-${BYACC_VERSION}.tgz"
 export ZOPEN_STABLE_DEPS="make zoslib coreutils diffutils sed grep"
 export ZOPEN_CATEGORIES="development"
